@@ -1,4 +1,4 @@
-FROM devilbox/php-fpm-8.0
+FROM devilbox/php-fpm-8.1
 COPY php.ini /usr/local/etc/php/
 
 ADD setup/xdebug.ini /tmp/xdebug.ini
