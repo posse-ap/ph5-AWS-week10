@@ -33,7 +33,7 @@
     </table>
     @else
      <div class="w-[32rem] p-4">
-        <p class="text-center">ユーザーが存在しません</p>
+        <p class="text-center">@if(request()->get('name'))「{{ request()->get('name') }}」に該当する@endif ユーザーが存在しません</p>
      </div>
     @endif
   </div>
