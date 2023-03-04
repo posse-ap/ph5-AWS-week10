@@ -1,5 +1,7 @@
 FROM devilbox/php-fpm-8.1
 
+COPY ./docker/php/php.ini /usr/local/etc/php/
+
 RUN apt-get update \
   && apt-get install -y \
   libzip-dev \
@@ -7,14 +9,6 @@ RUN apt-get update \
   mariadb-client \
   unzip \
   && docker-php-ext-install zip pdo_mysql
-
-# nodejs install
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
-  && apt-get install -y nodejs \
-  && apt-get install -y vim \
-  && docker-php-ext-install sockets \
-  && pecl install xdebug \
-  && docker-php-ext-enable xdebug
 
 # Composer2.0 install
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
