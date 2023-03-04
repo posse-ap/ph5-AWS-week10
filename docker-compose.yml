@@ -7,7 +7,7 @@ services:
       - ./src:/work/web
 
   web:
-    image: nginx
+    build: ./docker/nginx
     ports:
       - 80:80
     volumes:

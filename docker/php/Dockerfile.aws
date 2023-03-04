@@ -23,4 +23,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
 
+COPY ./src /work/web
+RUN mv /work/web/.env.aws /work/web/.env
+
 WORKDIR /work/web
