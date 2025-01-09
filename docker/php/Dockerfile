@@ -1,6 +1,6 @@
 FROM devilbox/php-fpm-8.1
 
-COPY ./docker/php/php.ini /usr/local/etc/php/
+COPY ./php.ini /usr/local/etc/php/
 
 RUN apt-get update \
   && apt-get install -y \
